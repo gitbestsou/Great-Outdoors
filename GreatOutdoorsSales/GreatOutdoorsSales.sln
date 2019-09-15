@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatOutdoorsSales", "GreatOutdoorsSales.csproj", "{C635AEF8-E756-44A6-9B4A-24EADBE3EF8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatOutdoorsSales.Entities", "GreatOutdoorsSales.Entities\GreatOutdoorsSales.Entities.csproj", "{9F01880B-2E09-43D2-B075-CB2594E95720}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatOutdoorsSales.DataAccessLayer", "GreatOutdoorsSales.DataAccessLayer\GreatOutdoorsSales.DataAccessLayer.csproj", "{5A349E9C-1A50-4A81-BECF-5EB26B07C410}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatOutdoorsSales.Exceptions", "..\GreatOutdoorsSales.Exceptions\GreatOutdoorsSales.Exceptions.csproj", "{386EA3A6-2A5F-4132-9246-CAD8181BE0CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatOutdoorsSales.BusinessLayer", "GreatOutdoorsSales.BusinessLayer\GreatOutdoorsSales.BusinessLayer.csproj", "{1F40E55A-BF9E-4CE0-823D-99562F4A0376}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C635AEF8-E756-44A6-9B4A-24EADBE3EF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C635AEF8-E756-44A6-9B4A-24EADBE3EF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C635AEF8-E756-44A6-9B4A-24EADBE3EF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C635AEF8-E756-44A6-9B4A-24EADBE3EF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F01880B-2E09-43D2-B075-CB2594E95720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F01880B-2E09-43D2-B075-CB2594E95720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F01880B-2E09-43D2-B075-CB2594E95720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F01880B-2E09-43D2-B075-CB2594E95720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A349E9C-1A50-4A81-BECF-5EB26B07C410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A349E9C-1A50-4A81-BECF-5EB26B07C410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A349E9C-1A50-4A81-BECF-5EB26B07C410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A349E9C-1A50-4A81-BECF-5EB26B07C410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386EA3A6-2A5F-4132-9246-CAD8181BE0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386EA3A6-2A5F-4132-9246-CAD8181BE0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386EA3A6-2A5F-4132-9246-CAD8181BE0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386EA3A6-2A5F-4132-9246-CAD8181BE0CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F40E55A-BF9E-4CE0-823D-99562F4A0376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F40E55A-BF9E-4CE0-823D-99562F4A0376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F40E55A-BF9E-4CE0-823D-99562F4A0376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F40E55A-BF9E-4CE0-823D-99562F4A0376}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E7A784F-AFD0-4F8B-B772-5733C230D158}
+	EndGlobalSection
+EndGlobal

@@ -6,6 +6,26 @@ using System.Threading.Tasks;
 
 namespace GO.Entities
 {
+    public abstract class User
+    {
+        private string _name;
+        private string _userName;
+        private string _password;
+        private string _email;
+
+        public string Name { get => _name; set => _name = value; }
+        public string UserName { get => _userName; set => _userName = value; }
+        public string Password { get => _password; set => _password = value; }
+        public string Email { get => _email; set => _email = value; }
+        
+    }
+
+    public class Admin : User
+    {
+        private int _adminId;
+        public int AdminId { get => _adminId; set => _adminId = value; }
+
+    }
     public class Product
     {
         private int productID;
@@ -34,10 +54,7 @@ namespace GO.Entities
 
         private double sellingPrice;
         public double SellingPrice { get => sellingPrice; set => sellingPrice = value; }
-     
-       
-        
-    
+
 
         public Product()
         {
@@ -53,28 +70,20 @@ namespace GO.Entities
     
     
     // Retailer classs 
-    public class Retailer
+    public class Retailer:User
     {
         private int _retailerID;
-        private string _uName;
-        private string _password;
-        private string _retailerame;
-        private string _email;
         private string _retailerContactNumber;
 
         public int RetailerID { get => _retailerID; set => _retailerID = value; }
-        public string UName { get => _uName; set => _uName = value; }
-        public string Password { get => _password; set => _password = value; }
-        public string RetailerName { get => _retailerame; set => _retailerame = value; }
-        public string Email { get => _email; set => _email = value; }
         public string RetailerContactNumber { get => _retailerContactNumber; set => _retailerContactNumber = value; }
 
         public Retailer()
         {
             RetailerID = 0;
-            UName = string.Empty;
+            Name = string.Empty;
             Password = string.Empty;
-            RetailerName = string.Empty;
+            UserName = string.Empty;
             Email = string.Empty;
             RetailerContactNumber = string.Empty;
 
@@ -320,4 +329,5 @@ namespace GO.Entities
         public string State { get => _state; set => _state = value; }
         public string ContactNo { get => _contactNo; set => _contactNo = value; }
     }
+
 }

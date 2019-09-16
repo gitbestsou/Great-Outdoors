@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
 using GO.Entities;
-using GO.Exceptions;
+using static GO.Exceptions.Exceptions;
 
 namespace GO.DAL
 {
@@ -23,7 +23,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsProductException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return productAdded;
 
@@ -49,7 +49,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsProductException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return searchProduct;
         }
@@ -69,7 +69,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsProductException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return searchProduct;
         }
@@ -89,7 +89,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsProductException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return searchProduct;
         }
@@ -115,7 +115,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsProductException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return productUpdated;
 
@@ -143,7 +143,7 @@ namespace GO.DAL
             }
             catch (DbException ex)
             {
-                throw new GreatOutdoorsProductException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return productDeleted;
 
@@ -164,7 +164,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return retailerAdded;
 
@@ -190,7 +190,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return searchRetailer;
         }
@@ -210,7 +210,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return searchRetailer;
         }
@@ -233,7 +233,7 @@ namespace GO.DAL
             }
             catch (SystemException ex)
             {
-                throw new GreatOutdoorsException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return retailerUpdated;
 
@@ -260,7 +260,7 @@ namespace GO.DAL
             }
             catch (DbException ex)
             {
-                throw new GreatOutdoorsException(ex.Message);
+                throw new GOException(ex.Message);
             }
             return retailerDeleted;
 

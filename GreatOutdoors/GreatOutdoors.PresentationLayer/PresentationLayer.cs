@@ -48,7 +48,8 @@ namespace GreatOutdoors.PresentationLayer
                                 Console.WriteLine("b. View Retailer Report");
                                 Console.WriteLine("c. View Overall Report");
                                 Console.WriteLine("d. Update Bonus");
-                                Console.WriteLine("e. Log out");
+                                Console.WriteLine("e. Update Discount");
+                                Console.WriteLine("f. Log out");
                                 choiceAdmin = Convert.ToChar(Console.ReadLine());
                                 switch (choiceAdmin)
                                 {
@@ -65,8 +66,10 @@ namespace GreatOutdoors.PresentationLayer
                                         //code for update bonus
                                         break;
                                     case 'e':
+                                        //code for update discount
+                                        break;
+                                    case 'f':
                                         //code for log out
-
                                         break;
                                     default:
                                         Console.WriteLine("Invalid Option");
@@ -74,7 +77,7 @@ namespace GreatOutdoors.PresentationLayer
 
                                 }//end of switch case for adminChoice
 
-                            } while (choiceAdmin != 'e');
+                            } while (choiceAdmin != 'f');
 
                         }
                         break;
@@ -188,6 +191,7 @@ namespace GreatOutdoors.PresentationLayer
                     case 4:
                         Console.WriteLine("--Register as a Retailer--");
                         // Code for Registering as a retailer
+                        //
                         break;
 
                 }

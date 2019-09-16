@@ -66,7 +66,7 @@ namespace GreatOutdoors.BusinessLayer
             bool returnAdded = false;
             try
             {
-                if (ValidateReturn(new))
+                if (ValidateReturn(newReturn))
                 {
                     Return_DAL returnDAL = new Return_DAL();
                     returnAdded = returnDAL.AddReturnDAL(newReturn);
@@ -172,6 +172,24 @@ namespace GreatOutdoors.BusinessLayer
 
             return returnDeleted;
         }
+
+        public void OrderForReturn()
+        {
+            //The order which should be implemented for the corresponding return
+        } 
+        public void TrackReturn()
+        {
+            //To track return
+        }
+        public void DeductMoneyFromRevenue()
+        {
+            //To change the revenue data due to return process
+        }
+        public void CancelOrder()
+        {
+            //To cancel online order
+        }
+
 
 
     }

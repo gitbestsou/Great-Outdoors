@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0159C5AD-8E54-4706-8A75-BB6D5DAFFA76}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GreatOutdoorOrder.BusinessLayer</RootNamespace>
-    <AssemblyName>GreatOutdoorOrder.BusinessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ProjectGuid>{B1C1DEE1-A274-4970-84E2-7572853ED6D4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GreatOutdoors.PresentationLayer</RootNamespace>
+    <AssemblyName>GreatOutdoors.PresentationLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,21 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GreatOutdoorOrder.DataAccessLayer\GreatOutdoorsOrder.DataAccessLayer.csproj">
-      <Project>{b976dc41-e695-4e87-b98b-cff9ceac4320}</Project>
-      <Name>GreatOutdoorsOrder.DataAccessLayer</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreatOutdoors.BusinessLayer\GreatOutdoors.BusinessLayer.csproj">
+      <Project>{9012bb58-bfd7-44e6-b885-a2561009c6e0}</Project>
+      <Name>GreatOutdoors.BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GreatOutdoorOrder.Entities\GreatOutdoorsOrder.Entities.csproj">
-      <Project>{7088e77f-64af-44ff-85f6-54deb9f03e47}</Project>
-      <Name>GreatOutdoorsOrder.Entities</Name>
+    <ProjectReference Include="..\GreatOutdoors.DataAccessLayer\GreatOutdoors.DataAccessLayer.csproj">
+      <Project>{6f098bee-ce3f-4ffb-aed2-5df82e854a46}</Project>
+      <Name>GreatOutdoors.DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GreatOutdoorOrder.Exceptions\GreatOutdoorsOrder.Exceptions.csproj">
-      <Project>{6fdc6d2a-f8c4-4511-ae61-93fa780edb55}</Project>
-      <Name>GreatOutdoorsOrder.Exceptions</Name>
+    <ProjectReference Include="..\GreatOutdoors.Entities\GreatOutdoors.Entities.csproj">
+      <Project>{4c8cb70c-afb8-4e79-9873-2c32532ee1ff}</Project>
+      <Name>GreatOutdoors.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GreatOutdoors.Exceptions\GreatOutdoors.Exceptions.csproj">
+      <Project>{5294a71c-16f6-4070-808a-0bd5758ea218}</Project>
+      <Name>GreatOutdoors.Exceptions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

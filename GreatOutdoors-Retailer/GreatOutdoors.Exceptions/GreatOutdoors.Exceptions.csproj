@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0159C5AD-8E54-4706-8A75-BB6D5DAFFA76}</ProjectGuid>
+    <ProjectGuid>{5294A71C-16F6-4070-808A-0BD5758EA218}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GreatOutdoorOrder.BusinessLayer</RootNamespace>
-    <AssemblyName>GreatOutdoorOrder.BusinessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>GreatOutdoors.Exceptions</RootNamespace>
+    <AssemblyName>GreatOutdoors.Exceptions</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -41,22 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL.cs" />
+    <Compile Include="GreatOutdoorsException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GreatOutdoorOrder.DataAccessLayer\GreatOutdoorsOrder.DataAccessLayer.csproj">
-      <Project>{b976dc41-e695-4e87-b98b-cff9ceac4320}</Project>
-      <Name>GreatOutdoorsOrder.DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GreatOutdoorOrder.Entities\GreatOutdoorsOrder.Entities.csproj">
-      <Project>{7088e77f-64af-44ff-85f6-54deb9f03e47}</Project>
-      <Name>GreatOutdoorsOrder.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GreatOutdoorOrder.Exceptions\GreatOutdoorsOrder.Exceptions.csproj">
-      <Project>{6fdc6d2a-f8c4-4511-ae61-93fa780edb55}</Project>
-      <Name>GreatOutdoorsOrder.Exceptions</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

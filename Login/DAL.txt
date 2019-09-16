@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entities;
+
+namespace DAL
+{
+    public class LoginDal
+    {   
+
+        public List<LoginEntities> cred = new List<LoginEntities>();
+        public void AddUser(LoginEntities l1)
+        {
+            cred.Add(l1);
+         
+        }
+        public bool Login(LoginEntities l2)
+        {
+            bool logged = false;
+        
+            foreach (LoginEntities item in cred)
+            {
+                if(item.Uname == l2.Uname  && item.Pwd == l2.Pwd && item.UserType==l2.UserType)
+                {
+                    Console.WriteLine("login Succesful");
+                    logged = true;
+
+                   
+                }
+                
+            }
+
+            return logged;
+        }
+    }
+}

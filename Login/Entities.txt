@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Entities
+{
+    public class LoginEntities
+    {
+        private string _uname;
+        private string _pwd;
+        private string _user;
+
+        public string Uname { get => _uname; set => _uname = value; }
+        public string Pwd { get => _pwd; set => _pwd = value; }
+        public string User { get => _user; set => _user = value; }
+    }
+
+
+}

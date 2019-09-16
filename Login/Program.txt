@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using Entities;
+using DAL;
+
+
+
+namespace LoginDevelopment
+{
+    class Program
+    {
+        static void Main()
+        {
+            //String line;
+            //try {
+            //    string path = @"c:\Capg\Login.txt";
+            //    StreamReader sr = new StreamReader(path);
+            //    line = sr.ReadLine();
+            //    while (line != null)
+            //    {
+            //        Console.WriteLine(line);
+            //        line = sr.ReadLine();
+            //    }
+            //    sr.Close();
+
+            //}
+            //catch () { }
+
+            Console.WriteLine("Welcome");
+
+            //if (option == 1)
+            //{
+            //string path = @"c:\Capg\Login.txt";
+            //}
+            int b = 0;
+           bool c = false;
+            LoginDal crede = new LoginDal(); ; //for checking log in
+            while ( b==0){
+                Console.WriteLine("1.Login \n2.Register");
+                int option = int.Parse(Console.ReadLine());
+                
+                if (option == 2)
+                {
+                    LoginEntities obj = new LoginEntities();
+                    //LoginDal cred = new LoginDal();
+                    Console.WriteLine("Enter uid : ");
+                    obj.Uname = Console.ReadLine();
+                    Console.WriteLine("Enter pwd : ");
+                    obj.Pwd = Console.ReadLine();
+                    Console.WriteLine("Type of User?(r/s/a) : ");
+                    obj.User = Console.ReadLine();
+                   //LoginDal action = new LoginDal();
+                    crede.AddUser(obj);
+                    Console.WriteLine("Registered Succesfully");
+
+                }
+                else
+                {
+                    LoginEntities obj = new LoginEntities();
+                    Console.WriteLine("Enter uid : ");
+                    obj.Uname = Console.ReadLine();
+                    Console.WriteLine("Enter pwd : ");
+                    obj.Pwd = Console.ReadLine();
+                    Console.WriteLine("Type of User?(r/s/a) : ");
+                    obj.User = Console.ReadLine();
+                   // LoginDal action = new LoginDal();
+                    c = crede.Login(obj);
+                    
+                    
+                }
+            }
+
+           
+            Console.WriteLine(c);
+            Console.ReadKey();
+
+
+        }
+    }
+}

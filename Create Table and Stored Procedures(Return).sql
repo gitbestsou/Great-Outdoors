@@ -1,13 +1,34 @@
+/*
+  stored procedures for insert, update, delete and retrieve 
+
+     Project Name   : GreatOutdoors
+	 Use Case       : Return
+	 Developer Name : Sourav Maji 
+	 Creation Date  : 27/09/2019
+	 Modified Date  : 07/10/2019
+*/
+
+
+
+
+
+
+
+
 USE [GreatOutdoors]
 GO
 
 /****** Object:  Schema [GreatOutdoors]    Script Date: 27-09-2019 18:24:43 ******/
+--Creation of SCHEMA
 CREATE SCHEMA [GOOrders]
 GO
 /*----------*/
 
 
 /*-----------------------------------------------Table Creation---------------------------------------------------------------*/
+
+--Creation of Return Table
+
 CREATE TABLE GOOrders.ReturnTable
 (
 ReturnID uniqueidentifier constraint PK_GOOrders_ReturnTable_ReturnID PRIMARY KEY,
@@ -19,11 +40,14 @@ LastModifiedDateTime datetime NOT NULL
 )
 GO
 
+
+--Creation of ReturnDetails Table
+
 Create Table GOOrders.ReturnDetails
 (
 ReturnDetailID uniqueidentifier constraint PK_GOOrders_ReturnDetails_ReturnDetailID PRIMARY KEY,
 ReturnID uniqueidentifier constraint FK_GOOrders_ReturnTable_ReturnDetails_ReturnID foreign key references GOOrders.ReturnTable(ReturnID),
-ProductID uniqueidentifier,
+ProductID uniqueidentifier constraint FK_GOOrders_Products_ReturnDetails_ProductID foreign key references GOOrders.Products(ProductID),
 Quantity int NOT NULL CHECK (Quantity >= 0),
 ReasonOfReturn varchar(10) NOT NULL CHECK (ReasonOfReturn='Incomplete' OR ReasonOfReturn='Wrong'),
 UnitPrice Decimal(15,2) NOT NULL CHECK (UnitPrice>0),
@@ -36,6 +60,18 @@ GO
 
 
 /*----------------------------------------------------------Stored Procedures for Return Method----------------------------------------------------*/
+
+
+/*   
+  Stored procedures to add a Return 
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji 
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
+
 Create Procedure GOOrders.AddReturn(@returnID uniqueidentifier, @orderID uniqueidentifier, @channelOfReturn varchar(7), @returnAmount decimal(15,2), @returnDateTime datetime,@lastModifiedDateTime datetime)
 as
 begin
@@ -60,9 +96,18 @@ throw 5002, 'Date Time cannot be null.',0
  end
 end
 GO
---CREATED PROCEDURE FOR Adding Order
 
 
+
+/*   
+  Stored procedures to retrieve all Return
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create procedure GOOrders.GetAllReturns
  as 
 begin
@@ -72,6 +117,16 @@ end
 end
 Go
 
+
+/*   
+  Stored procedures to retrieve a Return based on a given ReturnID
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create procedure GOOrders.GetReturnByReturnID(@returnID varchar(255))
 as 
 begin
@@ -88,6 +143,16 @@ end catch
 end
 Go
 
+
+/*   
+  Stored procedure to retrieve a Return based on a given ProductID
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create procedure GOOrders.GetReturnByOrderID(@orderID uniqueidentifier)
 as 
 begin
@@ -104,6 +169,16 @@ end catch
 end
 Go
 
+
+/*   
+  Stored procedure to delete a Return based on a given ReturnID
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create Procedure GOOrders.DeleteReturn(@returnID uniqueidentifier)
 as
 begin
@@ -128,6 +203,16 @@ GO
 
 /*-------------------------------------------------Stored Procedures for Return Details-----------------------------*/
 
+
+/*   
+  Stored procedure to add a ReturnDetails 
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create Procedure GOOrders.AddReturnDetails(@returnDetailID uniqueidentifier, @returnID uniqueidentifier,@productID uniqueidentifier, @quantity int ,@reasonOfReturn varchar(10), @unitPrice int, @totalPrice money, @addressID uniqueidentifier)
 begin
 if @returnDetailID is null OR @returnDetailID = ' '
@@ -151,10 +236,17 @@ VALUES(@returnDetailID, @returnID, @productID, @quantity,@reasonOfReturn, @UnitP
 end
 GO
 
-
 /*may be necessary later*/
-
-/*Create Procedure GOOrders.GetReturnDetailsByReturnDetailID(@returnDetailID uniqueidentifier))
+/*   
+  Stored procedure to add a ReturnDetails 
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji 
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
+Create Procedure GOOrders.GetReturnDetailsByReturnDetailID(@returnDetailID uniqueidentifier))
 as
 begin
 begin try
@@ -166,10 +258,18 @@ begin catch
  return 0
 end catch
 end
-GO*/
+GO
 
 
-
+/*   
+  Stored procedure to get a ReturnDetails based on ReturnID 
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create Procedure GOOrders.GetReturnDetailsByReturnID(@returnID uniqueidentifier))
 as
 begin
@@ -185,12 +285,20 @@ end
 GO
 
 
-
+/*   
+  Stored procedure to get a ReturnDetails based on ProductID 
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create Procedure GOOrders.GetReturnDetailsByProductID(@productID uniqueidentifier)
 as
 begin
 begin try
-Select * from GOOrders.ReturnDetails inner join GOOrders.ReturnTable on GOOrders.ReturnDetails.ReturnID = GOOrders.ReturnTable.ReturnID where ProductID = @productID
+Select * from GOOrders.ReturnDetails inner join GOOrders.Products on GOOrders.ReturnDetails.ProductID = GOOrders.Products.ProductID where ProductID = @productID
 end try
 begin catch
  PRINT @@ERROR;
@@ -204,7 +312,15 @@ GO
 
 
 
-
+/*   
+  Stored procedure to delete a ReturnDetails
+     Project Name       : GreatOutdoors
+	 Use Case           : Return
+	 Developer Name     : Sourav Maji
+	 Creation Date      : 01/10/2019
+	 Modified Date      : 01/10/2019
+	 
+*/
 Create Procedure GOOrders.DeleteReturnDetails(@returnID uniqueidentifier, @productID uniqueidentifier)
 as
 begin

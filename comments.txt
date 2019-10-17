@@ -1,0 +1,47 @@
+<!--
+
+  Template for retailer home page
+
+  Developer name : Sarthak Lav
+  Use case       : Retailer
+  Creation date  : 11-10-19
+  Last modified  : 14-10-19
+-->
+
+
+<!-- Retailer details are shown here in table-->
+
+
+<!--
+
+  Component for retailer home page
+
+  Developer name : Sarthak Lav
+  Use case       : Retailer
+  Creation date  : 11-10-19
+  Last modified  : 14-10-19
+-->
+
+<!--
+  
+  Template for registration page
+
+  Developer name : Sarthak Lav
+  Use case       : Retailer
+  Creation date  : 11-10-19
+  Last modified  : 14-10-19
+-->
+
+
+
+<!-- Registration form for retailer -->
+
+<!--
+
+  Component for retailer registration page
+
+  Developer name : Sarthak Lav
+  Use case       : Retailer
+  Creation date  : 11-10-19
+  Last modified  : 14-10-19
+-->
